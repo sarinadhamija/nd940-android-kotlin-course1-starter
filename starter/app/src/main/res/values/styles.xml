@@ -11,6 +11,7 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">@android:color/white</item>
     </style>
 
     <style name="CustomActionBarTheme" parent="Theme.MaterialComponents.Light">
@@ -26,6 +27,11 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomEditText">
+        <item name="backgroundTint">@color/colorPrimary</item>
+
+    </style>
 
     <style name="custom_button_style_filled">
         <item name="android:textSize">@dimen/dimen_text_18</item>

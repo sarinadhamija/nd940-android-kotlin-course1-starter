@@ -24,8 +24,6 @@ class ShoeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
-        (requireActivity() as AppCompatActivity).supportActionBar?.show()
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = HtmlCompat.fromHtml("<font color=\"#ffffff\">" + getString(R.string.app_name) + "</font>", HtmlCompat.FROM_HTML_MODE_LEGACY)
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -66,8 +64,8 @@ class ShoeDetailFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.logout_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun navigateToLogin() {

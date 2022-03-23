@@ -1,9 +1,11 @@
 package com.udacity.shoestore
 
+import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         initializeData()
 
+        setSupportActionBar(binding.toolbar)
         if (savedInstanceState != null) {
             val savedEmail = savedInstanceState.getString(EMAIL)
             if (!savedEmail.isNullOrEmpty()) sharedViewModel.saveLoginDetails(savedEmail)
@@ -49,13 +52,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeStartDestination() {
-        val controller = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
+        val controller =
+            (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
         val graph = controller.navInflater.inflate(R.navigation.navigation)
         graph.startDestination = when (sharedViewModel.isUserLoggedIn()) {
             true -> R.id.shoeListFragment
             false -> R.id.loginFragment
         }
         controller.graph = graph
+        val appBarConfig = AppBarConfiguration(controller.graph)
+        binding.toolbar.setupWithNavController(controller, appBarConfig)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

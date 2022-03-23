@@ -30,8 +30,6 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
-        (requireActivity() as AppCompatActivity).supportActionBar?.show()
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = HtmlCompat.fromHtml("<font color=\"#ffffff\">" + getString(R.string.app_name) + "</font>", HtmlCompat.FROM_HTML_MODE_LEGACY)
         setHasOptionsMenu(true)
         return binding.root
     }

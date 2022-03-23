@@ -32,6 +32,7 @@
 
         <EditText
             android:id="@+id/et_field_name"
+            style="@style/CustomEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/shoe_detail_form_name_hint"
@@ -52,6 +53,7 @@
 
         <EditText
             android:id="@+id/et_field_company"
+            style="@style/CustomEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/shoe_detail_form_company_hint"
@@ -73,6 +75,7 @@
 
         <EditText
             android:id="@+id/et_field_size"
+            style="@style/CustomEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_label_size"
@@ -95,6 +98,7 @@
 
         <EditText
             android:id="@+id/et_field_desc"
+            style="@style/CustomEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/shoe_detail_form_desc_hint"

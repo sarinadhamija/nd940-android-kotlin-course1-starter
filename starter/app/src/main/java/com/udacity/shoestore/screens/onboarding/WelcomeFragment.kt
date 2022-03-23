@@ -20,8 +20,6 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
-        requireActivity().actionBar?.hide()
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         return binding.root
     }
 
