@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".screens.onboarding.WelcomeFragment">
+
+        <TextView
+            android:id="@+id/tv_instruction_title"
+            style="@style/custom_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_50"
+            android:gravity="center"
+            android:text="@string/instruction_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_instruction_title"
+            android:layout_above="@id/tv_welcome_desc_one"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="24dp"
+            app:srcCompat="@drawable/ic_instructions_24" />
+
+        <TextView
+            android:id="@+id/tv_welcome_desc_one"
+            style="@style/custom_desc_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="start"
+            android:layout_centerInParent="true"
+            android:text="@string/instruction_desc_one" />
+
+        <TextView
+            android:id="@+id/tv_welcome_desc_two"
+            style="@style/custom_desc_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="start"
+            android:layout_below="@id/tv_welcome_desc_one"
+            android:text="@string/instruction_desc_two" />
+
+        <Button
+            android:id="@+id/btn_welcome_continue"
+            style="@style/custom_button_style_filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:text="@string/instruction_button_text" />
+
+    </RelativeLayout>
+</layout>

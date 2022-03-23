@@ -1,19 +1,69 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarTheme">@style/CustomActionBarTheme</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="CustomActionBarTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="titleTextStyle">@style/CustomActionBarTitleTheme</item>
+    </style>
+
+    <style name="CustomActionBarTitleTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="custom_button_style_filled">
+        <item name="android:textSize">@dimen/dimen_text_18</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/background_cta_primary_filled</item>
+    </style>
+
+    <style name="custom_button_style_bordered" parent="custom_button_style_filled">
+        <item name="android:background">@drawable/background_cta_primary_bordered</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="custom_title_text">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/dimen_text_32</item>
+    </style>
+
+    <style name="custom_desc_text">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/dimen_text_18</item>
+    </style>
+
+    <style name="custom_desc_text_primary_bold" parent="custom_desc_text">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="custom_item_title_text">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/dimen_text_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="custom_item_desc_text">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/dimen_text_14</item>
+    </style>
 
 </resources>

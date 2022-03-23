@@ -1,3 +1,30 @@
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">Shoe Store</string>
+    <string name="show_size_label">Size : %d</string>
+    <string name="error_fields_empty">Please fill all the details</string>
+    <string name="instruction_title">Let\' See how this works!</string>
+    <string name="instruction_desc_one">1. You can check all the shoes available \nin the inventory.</string>
+    <string name="instruction_desc_two">"2. A new entry for shoe can be created, and \nwill get updated in the inventory list. "</string>
+    <string name="instruction_button_text">Finish</string>
+    <string name="welcome_title">Welcome!</string>
+    <string name="welcome_desc">You can check all the shoes available \nin the inventory</string>
+    <string name="welcome_button_text">Next</string>
+    <string name="shoe_detail_form_title">Please fill some details</string>
+    <string name="shoe_detail_form_name_label">Shoe Name</string>
+    <string name="shoe_detail_form_company_label">Company</string>
+    <string name="shoe_detail_form_size_label">Shoe size</string>
+    <string name="shoe_detail_form_desc_label">Description</string>
+    <string name="shoe_detail_form_name_hint">Enter Name</string>
+    <string name="shoe_detail_form_company_hint">Enter Company</string>
+    <string name="shoe_detail_form_size_hint">Enter Shoe Size</string>
+    <string name="shoe_detail_form_desc_hint">Give Description</string>
+    <string name="shoe_detail_form_button_cancel">Cancel</string>
+    <string name="shoe_detail_form_button_save">Save</string>
+    <string name="login_form_email_hint">Enter Email</string>
+    <string name="login_form_password_hint">Enter Password</string>
+    <string name="login_form_button_login">Login</string>
+    <string name="login_form_signup_label">New Here?</string>
+    <string name="login_form_signup_text">SignUp</string>
+    <string name="fab_content_desc">Navigate to Show Detail</string>
+    <string name="menu_title_logout">Logout</string>
 </resources>
