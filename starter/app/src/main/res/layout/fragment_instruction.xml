@@ -36,9 +36,10 @@
             style="@style/custom_desc_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:gravity="start"
             android:layout_centerInParent="true"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="start"
             android:text="@string/instruction_desc_one" />
 
         <TextView

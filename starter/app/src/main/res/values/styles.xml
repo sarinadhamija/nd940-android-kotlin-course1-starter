@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarTheme">@style/CustomActionBarTheme</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -30,7 +31,7 @@
 
     <style name="CustomEditText">
         <item name="backgroundTint">@color/colorPrimary</item>
-
+        <item name="fontFamily">@font/roboto</item>
     </style>
 
     <style name="custom_button_style_filled">
@@ -48,28 +49,33 @@
     <style name="custom_title_text">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/roboto</item>
         <item name="android:textSize">@dimen/dimen_text_32</item>
     </style>
 
     <style name="custom_desc_text">
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">@dimen/dimen_text_18</item>
+        <item name="fontFamily">@font/roboto</item>
     </style>
 
     <style name="custom_desc_text_primary_bold" parent="custom_desc_text">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/roboto</item>
     </style>
 
     <style name="custom_item_title_text">
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">@dimen/dimen_text_16</item>
         <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/roboto</item>
     </style>
 
     <style name="custom_item_desc_text">
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">@dimen/dimen_text_14</item>
+        <item name="fontFamily">@font/roboto</item>
     </style>
 
 </resources>

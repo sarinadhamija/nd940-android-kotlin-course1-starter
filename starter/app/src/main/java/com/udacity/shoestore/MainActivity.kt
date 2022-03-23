@@ -1,25 +1,18 @@
 package com.udacity.shoestore
 
-import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.udacity.shoestore.databinding.ActivityMainBinding
-import com.udacity.shoestore.screens.SharedViewModel
-import kotlinx.android.synthetic.main.activity_main.view.*
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private var binding: ActivityMainBinding? = null
 
     companion object {
         const val EMAIL = "email"
@@ -36,15 +29,14 @@ class MainActivity : AppCompatActivity() {
 
         initializeData()
 
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding?.toolbar)
         if (savedInstanceState != null) {
             val savedEmail = savedInstanceState.getString(EMAIL)
-            if (!savedEmail.isNullOrEmpty()) sharedViewModel.saveLoginDetails(savedEmail)
+            if (!savedEmail.isNullOrEmpty()) sharedViewModel.email = savedEmail
         }
 
         initializeStartDestination()
     }
-
 
     private fun initializeData() {
         addImages()
@@ -61,14 +53,14 @@ class MainActivity : AppCompatActivity() {
         }
         controller.graph = graph
         val appBarConfig = AppBarConfiguration(controller.graph)
-        binding.toolbar.setupWithNavController(controller, appBarConfig)
+        binding?.toolbar?.setupWithNavController(controller, appBarConfig)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Timber.i("Data is Saved")
 
-        outState.putString(EMAIL, sharedViewModel.getEmail())
+        outState.putString(EMAIL, sharedViewModel.email)
     }
 
     private fun addImages() {
@@ -80,5 +72,10 @@ class MainActivity : AppCompatActivity() {
             R.drawable.shoe_image_5
         )
         sharedViewModel.setImageList(imageList)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }

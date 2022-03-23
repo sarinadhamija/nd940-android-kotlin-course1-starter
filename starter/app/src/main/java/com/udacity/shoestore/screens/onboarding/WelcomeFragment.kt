@@ -13,18 +13,24 @@ import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
 
-    lateinit var binding: FragmentWelcomeBinding
+    private var binding: FragmentWelcomeBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
-        return binding.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnWelcomeContinue.setOnClickListener { findNavController().navigate(R.id.action_welcomeFragment_to_instructionFragment) }
+        binding?.btnWelcomeContinue?.setOnClickListener { findNavController().navigate(R.id.action_welcomeFragment_to_instructionFragment) }
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }

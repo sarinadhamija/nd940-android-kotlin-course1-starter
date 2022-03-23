@@ -1,50 +1,44 @@
 package com.udacity.shoestore.screens.shoelisting
 
 import android.os.Bundle
-import android.text.Html
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.text.HtmlCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.SharedViewModel
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 import com.udacity.shoestore.databinding.LayoutShoeListItemBinding
-import com.udacity.shoestore.models.Shoe
-import com.udacity.shoestore.screens.SharedViewModel
 
 class ShoeListFragment : Fragment() {
 
-    lateinit var binding: FragmentShoeListBinding
+    private var binding: FragmentShoeListBinding? = null
 
     private val sharedViewModel by activityViewModels<SharedViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         setHasOptionsMenu(true)
-        return binding.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.fabAddShoeDetail.setOnClickListener { findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment) }
+        binding?.fabAddShoeDetail?.setOnClickListener { findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment) }
 
         sharedViewModel.shoeListLiveData.observe(viewLifecycleOwner, Observer {
             it?.apply {
-                this.forEach{
+                this.forEach {
                     val itemBinding: LayoutShoeListItemBinding = DataBindingUtil.inflate(
                         LayoutInflater.from(context),
                         R.layout.layout_shoe_list_item,
-                        binding.llListParent,
+                        binding?.llListParent,
                         false
                     )
                     itemBinding.shoe = it
@@ -54,7 +48,8 @@ class ShoeListFragment : Fragment() {
                             it.image
                         )
                     )
-                    binding.llListParent.addView(itemBinding.root)
+
+                    binding?.llListParent?.addView(itemBinding.root)
                 }
             }
         })
@@ -67,8 +62,7 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun navigateToLogin() {
-        findNavController().popBackStack(R.id.loginFragment, true)
-        findNavController().navigate(R.id.loginFragment)
+        findNavController().navigate(R.id.action_shoeListFragment_to_loginFragment)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -78,5 +72,9 @@ class ShoeListFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 
 }

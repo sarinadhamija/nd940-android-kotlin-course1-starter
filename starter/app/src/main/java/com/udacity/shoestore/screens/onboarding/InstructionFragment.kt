@@ -12,20 +12,25 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
 class InstructionFragment : Fragment() {
-    lateinit var binding: FragmentInstructionBinding
+    private var binding: FragmentInstructionBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instruction, container, false)
-        return binding.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnWelcomeContinue.setOnClickListener {
+        binding?.btnWelcomeContinue?.setOnClickListener {
             findNavController().navigate(R.id.action_instructionFragment_to_shoeListFragment)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }

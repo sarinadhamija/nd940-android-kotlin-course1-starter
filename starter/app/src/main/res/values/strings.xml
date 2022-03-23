@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Shoe Store</string>
+    <string name="login_label">Login</string>
+    <string name="list_label">Shoe List</string>
     <string name="show_size_label">Size : %d</string>
+    <string name="successful_fields_saved">Data Saved Successfully</string>
     <string name="error_fields_empty">Please fill all the details</string>
     <string name="instruction_title">Let\' See how this works!</string>
     <string name="instruction_desc_one">1. You can check all the shoes available \nin the inventory.</string>
