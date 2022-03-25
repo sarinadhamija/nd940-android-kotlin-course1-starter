@@ -8,6 +8,12 @@
             type="com.udacity.shoestore.SharedViewModel" />
     </data>
 
+    <!-- By Using Constraint layout to implement this design helped in adding views
+    with vertical bias in order to position them at certain position between 2 views.
+    In addition to that the sign up label and field was easily chained and
+    adding in the middle horizontally using app:layout_constraintHorizontal_chainStyle="packed"
+   -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -8,6 +8,12 @@
             type="com.udacity.shoestore.SharedViewModel" />
     </data>
 
+    <!-- In shoe detail form, the constraints like top bottom left right
+    helped in positioning the views based on each others position. Moreover,
+    the bottom buttons were placed easily using   app:layout_constraintHorizontal_chainStyle="spread"
+    and adding base line to one button helped in changing cancel button's position
+    based on save button-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

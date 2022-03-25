@@ -48,6 +48,10 @@ class SharedViewModel : ViewModel() {
         }
     }
 
+    fun updateDataSuccessFlag(value : Boolean) {
+        _isDataSuccessfullySaved.value = false
+    }
+
     fun setImageList(list: MutableList<Int>) {
         this.imageList.clear()
         this.imageList.addAll(list)

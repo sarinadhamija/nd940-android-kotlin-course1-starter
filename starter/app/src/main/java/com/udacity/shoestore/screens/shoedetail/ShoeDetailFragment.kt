@@ -59,6 +59,7 @@ class ShoeDetailFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        sharedViewModel.updateDataSuccessFlag(false)
         binding = null
     }
 }

@@ -2,6 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+  <!--  Linear layout is used as the requirement
+   of this screen was to add fragment below toolbar so using
+   vertical orientation solved the problem -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
